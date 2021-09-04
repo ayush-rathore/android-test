@@ -1,18 +1,20 @@
 import React from "react";
-import { View, Image, Text, StyleSheet } from "react-native";
+import { View, Image, StyleSheet, TouchableOpacity } from "react-native";
 
 import colors from "../config/colors";
 import AppText from "../components/AppText";
 
-function Card({ title, price, image }) {
+function Card({ title, price, image, onPress }) {
 	return (
-		<View style={styles.card}>
-			<Image source={image} style={styles.image} />
-			<View style={styles.details}>
-				<AppText style={styles.title}>{title}</AppText>
-				<AppText style={styles.price}>{price}</AppText>
+		<TouchableOpacity onPress={onPress}>
+			<View style={styles.card}>
+				<Image source={image} style={styles.image} />
+				<View style={styles.details}>
+					<AppText style={styles.title}>{title}</AppText>
+					<AppText style={styles.price}>{price}</AppText>
+				</View>
 			</View>
-		</View>
+		</TouchableOpacity>
 	);
 }
 
@@ -23,6 +25,8 @@ const styles = StyleSheet.create({
 		marginBottom: 20,
 		overflow: "hidden",
 		width: "90%",
+		marginLeft: 20,
+		marginTop: 20,
 	},
 	image: {
 		width: "100%",

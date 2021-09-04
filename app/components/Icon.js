@@ -17,7 +17,7 @@ function Icon({ icon, size = "30", backgroundColor, iconColor = "white" }) {
 			<MaterialCommunityIcons
 				name={icon}
 				color={iconColor}
-				size={size / 2}
+				size={size * 0.5}
 			/>
 		</View>
 	);

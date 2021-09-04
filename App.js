@@ -1,35 +1,15 @@
-import React, { useEffect, useState } from "react";
-import Screen from "./app/components/Screen";
-import * as ImagePicker from "expo-image-picker";
-import { Button, Image } from "react-native";
-import ImageInput from "./app/components/ImageInput";
+import { NavigationContainer } from "@react-navigation/native";
+import React from "react";
+import AppNavigator from "./app/navigation/AppNavigator";
+import AuthNavigator from "./app/navigation/AuthNavigator";
+import navigationTheme from "./app/navigation/navigationTheme";
 
 function App() {
-	const [imageUri, setImageUri] = useState();
-	const requestPermission = async () => {
-		const { granted } = await ImagePicker.requestCameraPermissionsAsync();
-		if (!granted) alert("You need to enable the camera permissions");
-	};
-	useEffect(() => {
-		requestPermission();
-	}, []);
-	const selectImage = async () => {
-		try {
-			const result = await ImagePicker.launchImageLibraryAsync();
-			if (!result.cancelled) setImageUri(result.uri);
-		} catch (error) {
-			console.error("Error reading the image", error);
-		}
-	};
 	return (
-		<Screen>
-			<Button title="Select Image" onPress={selectImage} />
-			{/* <Image
-				source={{ uri: imageUri }}
-				style={{ width: 200, height: 200 }}
-			/> */}
-			<ImageInput imageUri={imageUri} />
-		</Screen>
+		<NavigationContainer theme={navigationTheme}>
+			{/* <AuthNavigator /> */}
+			<AppNavigator />
+		</NavigationContainer>
 	);
 }
 
