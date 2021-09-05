@@ -1,3 +1,5 @@
+// Basic screen component for displaying other components
+
 import React from "react";
 import { View } from "react-native";
 import Constants from "expo-constants";

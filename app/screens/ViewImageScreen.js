@@ -1,18 +1,29 @@
+// Viewing the image on tap
+
 import React from "react";
-import { Image, StyleSheet, View } from "react-native";
+import {
+	Image,
+	StyleSheet,
+	View,
+	TouchableWithoutFeedback,
+} from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-function ViewImageScreen() {
+function ViewImageScreen({ navigation, route }) {
+	const image = route.params;
 	return (
 		<>
 			<View style={styles.container}>
-				<View style={styles.closeIcon}>
-					<MaterialCommunityIcons
-						name="close"
-						color="white"
-						size={30}
-					/>
-				</View>
+				<TouchableWithoutFeedback onPress={() => navigation.pop()}>
+					<View style={styles.closeIcon}>
+						<MaterialCommunityIcons
+							name="close"
+							color="white"
+							size={30}
+						/>
+					</View>
+				</TouchableWithoutFeedback>
+
 				<View style={styles.deleteIcon}>
 					<MaterialCommunityIcons
 						name="trash-can-outline"
@@ -22,7 +33,7 @@ function ViewImageScreen() {
 				</View>
 				<Image
 					resizeMode="contain"
-					source={require("../assets/chair.jpg")}
+					source={image}
 					style={styles.image}
 				/>
 			</View>

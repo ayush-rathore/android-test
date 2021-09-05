@@ -1,8 +1,11 @@
+// Card component for displaying in feed
+
 import React from "react";
 import { View, Image, StyleSheet, TouchableOpacity } from "react-native";
 
 import colors from "../config/colors";
 import AppText from "../components/AppText";
+import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 
 function Card({ title, price, image, onPress }) {
 	return (

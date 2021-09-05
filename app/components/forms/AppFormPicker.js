@@ -1,3 +1,5 @@
+// Picker component for picking an item from a given list
+
 import React from "react";
 import { useFormikContext } from "formik";
 

@@ -1,4 +1,6 @@
-import React, { useEffect } from "react";
+//Posting item screen
+
+import React from "react";
 import { StyleSheet } from "react-native";
 import * as Yup from "yup";
 
@@ -11,6 +13,7 @@ import {
 import FormImagePicker from "../components/forms/FormImagePicker";
 import Screen from "../components/Screen";
 // import useLocation from "../hooks/useLocation";
+//useLocation is not working as of now. Have to fix it
 
 const validationSchema = Yup.object().shape({
 	title: Yup.string().required().min(1).label("Title"),
@@ -24,6 +27,8 @@ const categories = [
 	{ label: "Furniture", value: 1 },
 	{ label: "Clothing", value: 2 },
 	{ label: "Camera", value: 3 },
+	{ label: "Electronics", value: 4 },
+	{ label: "Sports", value: 5 },
 ];
 
 function ListingEditScreen() {

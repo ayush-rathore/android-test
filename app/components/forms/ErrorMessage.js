@@ -1,3 +1,5 @@
+// Error message component for displaying errors while filling form fields
+
 import React from "react";
 import AppText from "../AppText";
 import { StyleSheet } from "react-native";

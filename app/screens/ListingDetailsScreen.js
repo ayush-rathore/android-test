@@ -1,15 +1,22 @@
+//Listing the details about the item
+
 import React from "react";
 import { View, Image, StyleSheet } from "react-native";
 
 import AppText from "../components/AppText";
 import colors from "../config/colors";
-import ListItem from "../components/ListItem";
+import ListItem from "../components/lists/ListItem";
+import { TouchableWithoutFeedback } from "react-native";
 
-function ListingDetailsScreen({ route }) {
+function ListingDetailsScreen({ navigation, route }) {
 	const listings = route.params;
 	return (
 		<View>
-			<Image source={listings.image} style={styles.image} />
+			<TouchableWithoutFeedback
+				onPress={() => navigation.navigate("ItemImage", listings.image)}
+			>
+				<Image source={listings.image} style={styles.image} />
+			</TouchableWithoutFeedback>
 			<View style={styles.details}>
 				<AppText style={styles.title}>{listings.title}</AppText>
 				<AppText style={styles.price}>{listings.price}</AppText>

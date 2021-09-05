@@ -1,3 +1,5 @@
+//Login Screen
+
 import React from "react";
 import { StyleSheet, Image } from "react-native";
 import Screen from "../components/Screen";

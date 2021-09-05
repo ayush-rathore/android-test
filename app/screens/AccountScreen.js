@@ -1,8 +1,10 @@
+// Account Screen
+
 import React from "react";
 import { StyleSheet, View, FlatList } from "react-native";
 
-import ListItem from "../components/ListItem";
-import ListItemSeparator from "../components/ListItemSeparator";
+import ListItem from "../components/lists/ListItem";
+import ListItemSeparator from "../components/lists/ListItemSeparator";
 
 import colors from "../config/colors";
 import Icon from "../components/Icon";
@@ -39,17 +41,17 @@ function AccountScreen({ navigation }) {
 			<View style={styles.container}>
 				<FlatList
 					data={menuItems}
-					keyExtractor={(menuItem) => menuItem.title}
+					// keyExtractor={(menuItem) => menuItem.title}
 					ItemSeparatorComponent={ListItemSeparator}
 					renderItem={({ item }) => (
 						<ListItem
 							title={item.title}
-							// ImageComponent={
-							// 	<Icon
-							// 		icon={item.icon.name}
-							// 		backgroundColor={item.icon.backgroundColor}
-							// 	/>
-							// }
+							IconComponent={
+								<Icon
+									icon={item.icon.name}
+									backgroundColor={item.icon.backgroundColor}
+								/>
+							}
 							onPress={() =>
 								navigation.navigate(item.targetScreen)
 							}
@@ -59,9 +61,7 @@ function AccountScreen({ navigation }) {
 			</View>
 			<ListItem
 				title="Log Out"
-				// ImageComponent={
-				// 	<Icon icon="logout" backgroundColor="#ffe66d" />
-				// }
+				IconComponent={<Icon icon="logout" backgroundColor="#ffe66d" />}
 			/>
 		</Screen>
 	);

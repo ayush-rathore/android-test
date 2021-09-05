@@ -1,3 +1,5 @@
+//Location hook for accessing user's location
+
 import * as Location from "expo-location";
 import { useEffect, useState } from "react";
 

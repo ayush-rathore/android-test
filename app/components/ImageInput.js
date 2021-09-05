@@ -1,3 +1,5 @@
+//Input component for picking image from the File Manager
+
 import React, { useEffect } from "react";
 import {
 	View,

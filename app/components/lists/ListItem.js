@@ -1,23 +1,27 @@
+//Component for Listing items in the feed
+
 import React from "react";
 import { View, StyleSheet, Image, TouchableHighlight } from "react-native";
-import colors from "../config/colors";
-import AppText from "./AppText";
+import colors from "../../config/colors";
+import AppText from ".././AppText";
 import { Swipeable } from "react-native-gesture-handler";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 function ListItem({
+	//passing the props
 	title,
 	description,
 	image,
-	ImageComponent,
+	IconComponent,
 	onPress,
 	renderRightActions,
 }) {
 	return (
 		<Swipeable renderRightActions={renderRightActions}>
+			{/*rendering actions on right swipe*/}
 			<TouchableHighlight onPress={onPress} underlayColor={colors.light}>
 				<View style={styles.container}>
-					{ImageComponent}
+					{IconComponent}
 					{image && <Image source={image} style={styles.image} />}
 					<View
 						style={{

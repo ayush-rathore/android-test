@@ -1,10 +1,12 @@
+//Picker component using in Form Picker
+
 import React, { useState } from "react";
 import {
 	View,
 	StyleSheet,
 	TouchableWithoutFeedback,
 	Modal,
-	Button,
+	Text,
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import colors from "../config/colors";
@@ -45,10 +47,16 @@ function AppPicker({ icon, placeholder, items, selectedItem, onSelectItem }) {
 			</TouchableWithoutFeedback>
 			<Modal visible={modalVisible} animationType="slide">
 				<Screen style={{ alignItems: "center" }}>
-					<Button
+					{/* <Button
+						color={colors.primary}
 						title="Close"
 						onPress={() => setModalVisible(false)}
-					/>
+					/> */}
+					<TouchableWithoutFeedback
+						onPress={() => setModalVisible(false)}
+					>
+						<Text style={styles.button}>Close</Text>
+					</TouchableWithoutFeedback>
 					<FlatList
 						data={items}
 						keyExtractor={(item) => item.value.toString()}
@@ -82,6 +90,10 @@ const styles = StyleSheet.create({
 	},
 	text: {
 		flex: 1,
+	},
+	button: {
+		color: colors.primary,
+		fontSize: 18,
 	},
 });
 export default AppPicker;

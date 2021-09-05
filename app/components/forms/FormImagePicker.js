@@ -1,3 +1,5 @@
+// Image picker component for picking images in the form
+
 import React from "react";
 import ImageInputList from "../ImageInputList";
 import ErrorMessage from "./ErrorMessage";
