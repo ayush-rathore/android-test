@@ -41,17 +41,17 @@ function AccountScreen({ navigation }) {
 			<View style={styles.container}>
 				<FlatList
 					data={menuItems}
-					// keyExtractor={(menuItem) => menuItem.title}
+					keyExtractor={(menuItem) => menuItem.title}
 					ItemSeparatorComponent={ListItemSeparator}
 					renderItem={({ item }) => (
 						<ListItem
 							title={item.title}
-							IconComponent={
-								<Icon
-									icon={item.icon.name}
-									backgroundColor={item.icon.backgroundColor}
-								/>
-							}
+							// IconComponent={
+							// 	<Icon
+							// 		icon={item.icon.name}
+							// 		backgroundColor={item.icon.backgroundColor}
+							// 	/>
+							// }
 							onPress={() =>
 								navigation.navigate(item.targetScreen)
 							}
@@ -61,7 +61,7 @@ function AccountScreen({ navigation }) {
 			</View>
 			<ListItem
 				title="Log Out"
-				IconComponent={<Icon icon="logout" backgroundColor="#ffe66d" />}
+				// IconComponent={<Icon icon="logout" backgroundColor="#ffe66d" />}
 			/>
 		</Screen>
 	);

@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
 	price: {
 		color: colors.secondary,
 		fontWeight: "bold",
+		fontSize: 18,
 	},
 });
 export default Card;

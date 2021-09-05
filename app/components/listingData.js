@@ -13,7 +13,7 @@ const listings = [
 	},
 	{
 		id: 3,
-		title: "White chair which looks good",
+		title: "Wooden chair which looks good",
 		price: "RS. 400",
 		image: require("../assets/chair.jpg"),
 	},

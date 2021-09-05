@@ -7,6 +7,7 @@ import {
 	TouchableWithoutFeedback,
 	Modal,
 	Text,
+	TouchableOpacity,
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import colors from "../config/colors";
@@ -46,17 +47,15 @@ function AppPicker({ icon, placeholder, items, selectedItem, onSelectItem }) {
 				</View>
 			</TouchableWithoutFeedback>
 			<Modal visible={modalVisible} animationType="slide">
-				<Screen style={{ alignItems: "center" }}>
+				<Screen>
 					{/* <Button
 						color={colors.primary}
 						title="Close"
 						onPress={() => setModalVisible(false)}
 					/> */}
-					<TouchableWithoutFeedback
-						onPress={() => setModalVisible(false)}
-					>
+					<TouchableOpacity onPress={() => setModalVisible(false)}>
 						<Text style={styles.button}>Close</Text>
-					</TouchableWithoutFeedback>
+					</TouchableOpacity>
 					<FlatList
 						data={items}
 						keyExtractor={(item) => item.value.toString()}
@@ -94,6 +93,7 @@ const styles = StyleSheet.create({
 	button: {
 		color: colors.primary,
 		fontSize: 18,
+		marginLeft: "45%",
 	},
 });
 export default AppPicker;
